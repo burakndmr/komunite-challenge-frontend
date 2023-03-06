@@ -1,12 +1,28 @@
 // Components
 import TodoItem from "../molecules/TodoItem";
-// Types
-type Props = {};
 
-export default function Todos({}: Props) {
+import Paragraph from "../atoms/texts/Paragraph";
+
+// Types
+
+interface Todo {
+  id: number;
+  text: string;
+  done: boolean;
+}
+
+type Props = {
+  todos: Todo[];
+};
+
+export default function Todos({ todos }: Props) {
   return (
     <div className="">
-      <TodoItem />
+      {todos.length > 0 ? (
+        todos.map((todo: Todo) => <TodoItem />)
+      ) : (
+        <Paragraph value="Please add todo item" />
+      )}
     </div>
   );
 }
