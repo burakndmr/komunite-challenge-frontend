@@ -14,7 +14,7 @@ export default function AddInput({ action, value, name }: Props) {
       onChange={action}
       name={name}
       value={value}
-      className=""
+      className="w-full border-2 border-gray-300 rounded-md p-2 basis-10/12"
     />
   );
 }

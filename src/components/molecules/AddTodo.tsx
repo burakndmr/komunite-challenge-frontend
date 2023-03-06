@@ -42,7 +42,7 @@ export default function AddTodo({ setTodos }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="">
+    <form onSubmit={handleSubmit} className="w-full flex gap-3">
       <AddInput action={inputHandler} value={todo.text} name="addTodo" />
       <SubmitInput name="submit" value="Add Todo" />
     </form>

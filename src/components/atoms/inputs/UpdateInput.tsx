@@ -1,5 +1,7 @@
 // Components
 
+import { forwardRef } from "react";
+
 // Types
 type Props = {
   action: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -7,14 +9,20 @@ type Props = {
   name: string;
 };
 
-export default function UpdateInput({ action, value, name }: Props) {
-  return (
-    <input
-      onChange={action}
-      type="text"
-      name={name}
-      value={value}
-      className=""
-    />
-  );
-}
+const UpdateInput = forwardRef<HTMLInputElement, Props>(
+  ({ action, value, name }: Props, ref) => (
+    <>
+      {console.log(ref)}
+      <input
+        ref={ref}
+        onChange={action}
+        type="text"
+        name={name}
+        value={value}
+        className=""
+      />
+    </>
+  )
+);
+
+export default UpdateInput;

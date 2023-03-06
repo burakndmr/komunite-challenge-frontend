@@ -18,7 +18,7 @@ type Props = {
 
 export default function Todos({ todos, setTodos }: Props) {
   return (
-    <div className="">
+    <div className="flex flex-col  gap-3 items-center">
       {todos.length > 0 ? (
         todos.map((todo: Todo, i) => (
           <TodoItem key={i} item={todo} setTodos={setTodos} />
