@@ -7,18 +7,19 @@ import Todos from "../molecules/Todos";
 type Props = {};
 
 export default function TodoApp({}: Props) {
-
   interface Todo {
-    id: number;
+    id?: number;
     text: string;
     done: boolean;
   }
 
-  const [todos, setTodos] = useState<Todo[]>([])
+  const [todos, setTodos] = useState<Todo[]>([]);
+
+  console.log("todoApp.tsx", todos);
 
   return (
     <div className="">
-      <AddTodo />
+      <AddTodo setTodos={setTodos} />
       <Todos todos={todos} />
     </div>
   );

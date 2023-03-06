@@ -6,14 +6,25 @@ import UpdateInput from "../atoms/inputs/UpdateInput";
 import Paragraph from "../atoms/texts/Paragraph";
 
 // Types
-type Props = {};
+interface Todo {
+  id?: number;
+  text: string;
+  done: boolean;
+}
+type Props = {
+  item: Todo;
+};
 
-export default function TodoItem({}: Props) {
+export default function TodoItem({ item }: Props) {
   const [editMode, setEditMode] = useState(false);
 
   return (
     <div className="">
-      {editMode ? <UpdateInput name="" value="" /> : <Paragraph value="" />}
+      {editMode ? (
+        <UpdateInput name="" value="" />
+      ) : (
+        <Paragraph value={item.text} />
+      )}
       <div>
         <PrimaryButton />
         <PrimaryButton />
