@@ -1,5 +1,6 @@
 // Components
 import Example from "@/components/organisms/example"
+import TodoApp from "@/components/organisms/TodoApp"
 
 // Types
 type Props = {}
@@ -7,7 +8,7 @@ type Props = {}
 export default function HomeTemplate({}:Props) {
   return (
     <div className="">
-      <Example />
+      <TodoApp />
     </div>
   )
 }
