@@ -20,7 +20,7 @@ export default function TodoApp({}: Props) {
   return (
     <div className="">
       <AddTodo setTodos={setTodos} />
-      <Todos todos={todos} />
+      <Todos todos={todos} setTodos={setTodos} />
     </div>
   );
 }

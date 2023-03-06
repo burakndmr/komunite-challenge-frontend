@@ -13,13 +13,16 @@ interface Todo {
 
 type Props = {
   todos: Todo[];
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
 
-export default function Todos({ todos }: Props) {
+export default function Todos({ todos, setTodos }: Props) {
   return (
     <div className="">
       {todos.length > 0 ? (
-        todos.map((todo: Todo, i) => <TodoItem key={i} item={todo} />)
+        todos.map((todo: Todo, i) => (
+          <TodoItem key={i} item={todo} setTodos={setTodos} />
+        ))
       ) : (
         <Paragraph value="Please add todo item" />
       )}

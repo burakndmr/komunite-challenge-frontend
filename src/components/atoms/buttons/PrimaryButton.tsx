@@ -1,8 +1,15 @@
 // Components
 
 // Types
-type Props = {};
+type Props = {
+  action: () => void;
+  value: string;
+};
 
-export default function PrimaryButton({}: Props) {
-  return <div className="">Example Component</div>;
+export default function PrimaryButton({ action, value }: Props) {
+  return (
+    <div onClick={action} className="">
+      {value}
+    </div>
+  );
 }
