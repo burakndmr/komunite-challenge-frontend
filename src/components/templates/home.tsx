@@ -1,5 +1,4 @@
 // Components
-import Example from "@/components/organisms/example"
 import TodoApp from "@/components/organisms/TodoApp"
 
 // Types
