@@ -1,5 +1,5 @@
-// Components
 import { useState } from "react";
+// Components
 import AddTodo from "../molecules/AddTodo";
 import Todos from "../molecules/Todos";
 import Title from "../atoms/texts/Title";
@@ -15,7 +15,6 @@ export default function TodoApp({}: Props) {
   }
 
   const [todos, setTodos] = useState<Todo[]>([]);
-
 
   return (
     <div className="flex flex-col gap-6">

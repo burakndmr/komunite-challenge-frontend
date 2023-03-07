@@ -42,7 +42,7 @@ export default function TodoItem({ item, setTodos }: Props) {
     }
   }, [editMode]);
 
-  // EDIT AND DELETE FUNCTINOS
+  // EDIT AND DELETE FUNCTIONS
   const editItem = () => {
     setEditMode((prev) => !prev);
   };

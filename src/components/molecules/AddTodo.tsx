@@ -1,5 +1,6 @@
-// Components
 import { useState } from "react";
+
+// Components
 import AddInput from "../atoms/inputs/AddInput";
 import SubmitInput from "../atoms/inputs/SubmitInput";
 
@@ -21,7 +22,6 @@ export default function AddTodo({ setTodos }: Props) {
   });
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(todo);
     setTodo({
       ...todo,
       text: e.target.value,

@@ -11,17 +11,14 @@ type Props = {
 
 const UpdateInput = forwardRef<HTMLInputElement, Props>(
   ({ action, value, name }: Props, ref) => (
-    <>
-      {console.log(ref)}
-      <input
-        ref={ref}
-        onChange={action}
-        type="text"
-        name={name}
-        value={value}
-        className=""
-      />
-    </>
+    <input
+      ref={ref}
+      onChange={action}
+      type="text"
+      name={name}
+      value={value}
+      className="w-full p-2 rounded-md border-2 border-gray-300 focus:outline-none focus:border-sky-600"
+    />
   )
 );
 

@@ -12,7 +12,6 @@ export default function SubmitInput({ value, name, disabled }: Props) {
     disable: "bg-gray-600",
     notDisable: "bg-sky-600 active:bg-sky-900",
   };
-  console.log("VALIDATION", disabled);
   return (
     <input
       type="submit"

@@ -1,6 +1,5 @@
 // Components
 import TodoItem from "../molecules/TodoItem";
-
 import Paragraph from "../atoms/texts/Paragraph";
 
 // Types
