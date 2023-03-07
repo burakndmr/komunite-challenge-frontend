@@ -51,18 +51,35 @@ export default function TodoItem({ item, setTodos }: Props) {
     setTodos((prev) => prev.filter((todo) => todo.id !== item.id));
   };
 
+  const doneItem = () => {
+    setTodos((prev) =>
+      prev.map((todo) => {
+        if (todo.id === item.id) {
+          return {
+            ...todo,
+            done: !todo.done,
+          };
+        }
+        return todo;
+      })
+    );
+  };
+
   return (
-    <div className="w-full flex justify-between items-center border-2 border-gray-300 rounded-md p-2">
-      {editMode ? (
-        <UpdateInput
-          ref={inputRef}
-          action={inputHandler}
-          name=""
-          value={item.text}
-        />
-      ) : (
-        <Paragraph value={item.text} />
-      )}
+    <div className="w-full flex justify-between items-center border-2 border-gray-300 rounded-md p-2 gap-3">
+      <PrimaryButton variant="gray" action={doneItem} value="Done" />
+      <div className="w-full">
+        {editMode ? (
+          <UpdateInput
+            ref={inputRef}
+            action={inputHandler}
+            name=""
+            value={item.text}
+          />
+        ) : (
+          <Paragraph value={item.text} status={item.done ? "done" : "undone"} />
+        )}
+      </div>
       <div className="flex gap-2">
         <PrimaryButton variant="emerald" action={editItem} value="Update" />
         <PrimaryButton variant="red" action={deleteItem} value="Delete" />
