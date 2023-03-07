@@ -1,5 +1,5 @@
 // Components
-import {  useState } from "react";
+import { useState } from "react";
 import AddInput from "../atoms/inputs/AddInput";
 import SubmitInput from "../atoms/inputs/SubmitInput";
 
@@ -15,7 +15,6 @@ type Props = {
 };
 
 export default function AddTodo({ setTodos }: Props) {
-
   const [todo, setTodo] = useState<Todo>({
     text: "",
     done: false,
@@ -44,7 +43,11 @@ export default function AddTodo({ setTodos }: Props) {
   return (
     <form onSubmit={handleSubmit} className="w-full flex gap-3">
       <AddInput action={inputHandler} value={todo.text} name="addTodo" />
-      <SubmitInput name="submit" value="Add Todo" />
+      <SubmitInput
+        disabled={todo.text === "" ? "disable" : "notDisable"}
+        name="submit"
+        value="Add Todo"
+      />
     </form>
   );
 }

@@ -24,7 +24,7 @@ export default function Todos({ todos, setTodos }: Props) {
           <TodoItem key={i} item={todo} setTodos={setTodos} />
         ))
       ) : (
-        <Paragraph value="Please add todo item" />
+        <Paragraph value="Please add todo item" status="undone" />
       )}
     </div>
   );
